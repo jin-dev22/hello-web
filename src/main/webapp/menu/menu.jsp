@@ -52,6 +52,8 @@ th, td {
 	priceTags.put("밀크쉐이크", 2500);
 	
 	//servlet에 전달하는 방법은...?
+	//session사용해보기 ----------아직 커밋 안함 밥먹고와서 다시 보기
+	session.setAttribute("priceTags", priceTags);
 	
 %>
 </script>

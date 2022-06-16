@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/menuOrder.do")
 public class menuOrderServlet extends HttpServlet{
@@ -23,17 +24,10 @@ public class menuOrderServlet extends HttpServlet{
 		String drinkMenu = req.getParameter("drinkMenu");
 		
 		//3.업무로직
+		HttpSession session = req.getSession();
 		int payment = 0;
-		HashMap<String, Integer> priceTags = new HashMap<>();
-		priceTags.put("한우버거", 5000);
-		priceTags.put("밥버거", 4500);
-		priceTags.put("치즈버거", 4000);
-		priceTags.put("감자튀김", 1500);
-		priceTags.put("어니언링", 1700);
-		priceTags.put("콜라", 1000);
-		priceTags.put("사이다", 1000);
-		priceTags.put("커피", 1500);
-		priceTags.put("밀크쉐이크", 2500);
+		//session객체 선언, menu.jsp에서 추가한 메뉴판 hashmap받아오기
+		HashMap<String, Integer> priceTags = (HashMap) session.getAttribute("priceTags");//		
 		payment += priceTags.get(mainMenu);
 		payment += priceTags.get(sideMenu);
 		payment += priceTags.get(drinkMenu);
