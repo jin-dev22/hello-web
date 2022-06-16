@@ -31,35 +31,31 @@ th, td {
          const days = ['일', '월', '화', '수', '목', '금', '토'];		         
          return `${'${yyyy}'}년 ${'${MM}'}월  ${'${dd}'}일 ${'${days[day]}'}요일`;
 	}
- 
-	function getPriceTags(){
-		const menulist = [];		    	
-		document.querySelectorAll("tr td:nth-last-child(2)").forEach((elem)=>{
-		 menulist.push(elem.innerHTML);
-		});
-		const pricelist = [];
-		document.querySelectorAll("tr td:last-child").forEach((elem)=>{
-		           const priceStr = elem.innerHTML;
-		           const price = priceStr.substring(0, (priceStr.length-1));
-		 pricelist.push(price);
-		})
-		
-		const priceTags = {};
-		for(let i = 0; i < menulist.length; i++){
-		 priceTags[menulist[i]] = pricelist[i];
-		}
-		
-		return priceTags;
-     } 
-      
-     window.onload = ()=>{
-  	   document.querySelector("h2 sub").innerHTML = today();
-     }
+	
+	window.onload = ()=>{
+ 	   document.querySelector("h2 sub").innerHTML = today();
+    }
 
-</script>
 <%
-// 가격표 자바 해시맵으로 만들어서 servlet에 전달하는 방법 있는지 찾아보기
+// servlet에서 계산해야됨 -> 가격표 자바 해시맵으로 만들어서 servlet에 전달하는 방법 있는지 찾아보기
+	int payment = 0;
+	HashMap<String, Integer> priceTags = new HashMap<>();
+	//자바로는 document.querySelectorAll 같은거 없는지 찾아보기
+	priceTags.put("한우버거", 5000);
+	priceTags.put("밥버거", 4500);
+	priceTags.put("치즈버거", 4000);
+	priceTags.put("감자튀김", 1500);
+	priceTags.put("어니언링", 1700);
+	priceTags.put("콜라", 1000);
+	priceTags.put("사이다", 1000);
+	priceTags.put("커피", 1500);
+	priceTags.put("밀크쉐이크", 2500);
+	
+	//servlet에 전달하는 방법은...?
+	
 %>
+</script>
+	
 </head>
 <body>
 	<h2>
