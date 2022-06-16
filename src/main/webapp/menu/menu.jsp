@@ -18,24 +18,6 @@ th, td {
 }
 </style>
 <script src="/web/js/jquery-3.6.0.js"></script>
-<script>
-	function today(){
-         function f(n){
-             return n < 10 ? "0" + n : n;
-         }
-         const now = new Date();
-         const yyyy = now.getFullYear();
-         const MM = f(now.getMonth() +1);
-         const dd = f(now.getDate());
-         const day = now.getDay();
-         const days = ['일', '월', '화', '수', '목', '금', '토'];		         
-         return `${'${yyyy}'}년 ${'${MM}'}월  ${'${dd}'}일 ${'${days[day]}'}요일`;
-	}
-	
-	window.onload = ()=>{
- 	   document.querySelector("h2 sub").innerHTML = today();
-    }
-
 <%
 // servlet에서 계산해야됨 -> 가격표 자바 해시맵으로 만들어서 servlet에 전달하는 방법 있는지 찾아보기
 	int payment = 0;
@@ -55,9 +37,7 @@ th, td {
 	//session사용해보기 ----------
 	session.setAttribute("priceTags", priceTags);
 	
-%>
-</script>
-	
+%>	
 </head>
 <body>
 	<h2>
