@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>hello-web</display-name>
+  <!-- 배포서술자 Deployment Descriptor -->
+  
+  <servlet>
+  	<servlet-name>TestPersonServvvlet1</servlet-name>
+  	<servlet-class>com.kh.web.TestPersonServlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestPersonServvvlet1</servlet-name>
+  	<url-pattern>/testPerson1.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>TestPersonServvlet2</servlet-name>
+  	<servlet-class>com.kh.web.TestPersonServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>TestPersonServvlet2</servlet-name>
+	<url-pattern>/testPerson2.do</url-pattern> 
+  </servlet-mapping>
+</web-app>
