@@ -24,9 +24,9 @@ public class menuOrderServlet extends HttpServlet{
 		String drinkMenu = req.getParameter("drinkMenu");
 		
 		//3.업무로직
-		HttpSession session = req.getSession();
 		int payment = 0;
 		//session객체 선언, menu.jsp에서 추가한 메뉴판 hashmap받아오기
+		HttpSession session = req.getSession();
 		HashMap<String, Integer> priceTags = (HashMap) session.getAttribute("priceTags");
 		payment += priceTags.get(mainMenu);
 		payment += priceTags.get(sideMenu);
