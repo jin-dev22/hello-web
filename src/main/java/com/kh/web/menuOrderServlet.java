@@ -18,20 +18,29 @@ public class menuOrderServlet extends HttpServlet{
 		req.setCharacterEncoding("utf-8");
 		
 		//2.사용자입력값처리
-		
-		//3.업무로직
-		int payment = 0;
-		HashMap<String, Integer> priceTags = (HashMap<String, Integer>) req.getAttribute("priceTags");
 		String mainMenu = req.getParameter("mainMenu");
 		String sideMenu = req.getParameter("sideMenu");
 		String drinkMenu = req.getParameter("drinkMenu");
+		
+		//3.업무로직
+		int payment = 0;
+		HashMap<String, Integer> priceTags = new HashMap<>();
+		priceTags.put("한우버거", 5000);
+		priceTags.put("밥버거", 4500);
+		priceTags.put("치즈버거", 4000);
+		priceTags.put("감자튀김", 1500);
+		priceTags.put("어니언링", 1700);
+		priceTags.put("콜라", 1000);
+		priceTags.put("사이다", 1000);
+		priceTags.put("커피", 1500);
+		priceTags.put("밀크쉐이크", 2500);
 		payment += priceTags.get(mainMenu);
 		payment += priceTags.get(sideMenu);
 		payment += priceTags.get(drinkMenu);
 		
 		
 		//4.응답메세지->jsp
-		req.setAttribute("payment", resp);
+		req.setAttribute("payment", payment);
 		RequestDispatcher reqDispatcher = req.getRequestDispatcher("/menu/menuEnd.jsp");
 		reqDispatcher.forward(req, resp);
 		

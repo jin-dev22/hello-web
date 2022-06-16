@@ -32,6 +32,6 @@ span#price {
 	<span id="sideMenu"><%=request.getParameter("sideMenu") %></span>,
 	<span id="drinkMenu"><%=request.getParameter("drinkMenu") %></span>을/를 주문하셨습니다.
 	<br /> 총 결제금액은
-	<span id="price"><%=(String) request.getAttribute("payment") %>원</span> 입니다.
+	<span id="price"><%=request.getAttribute("payment") %>원</span> 입니다.
 </body>
 </html>

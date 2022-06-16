@@ -54,26 +54,8 @@ th, td {
       
      window.onload = ()=>{
   	   document.querySelector("h2 sub").innerHTML = today();
-  	   const priceTags = getPriceTags();
-  	   
      }
-     
-     //ajax로 json데이터 전송하기?
-     $(document).ready(function(){
-    		$.ajax({
-    			type: //데이터 전송 타입,
-    			url : //데이터를 주고받을 파일 주소 입력,
-    			data: //보내는 데이터,
-    			dataType://문자형식으로 받기 , 
-    			success: function(result){
-    				//작업이 성공적으로 발생했을 경우
-    			},
-    			error:function(){  
-    	            //에러가 났을 경우 실행시킬 코드
-    			}
-    		})
-    	});
-    	[출처] [AJax] 데이터 전송하기(GET,POST,JSON)|작성자 Ohsanrim
+
 </script>
 <%
 // 가격표 자바 해시맵으로 만들어서 servlet에 전달하는 방법 있는지 찾아보기
