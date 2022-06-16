@@ -61,7 +61,7 @@ th, td {
 </head>
 <body>
 	<h2>
-		오늘의 메뉴 <sub style="color: lightgray"></sub>
+		오늘의 메뉴 <sub style="color: lightgray"><%@ include file="/menu/today.jsp" %></sub>
 	</h2>
 
 	<table>
