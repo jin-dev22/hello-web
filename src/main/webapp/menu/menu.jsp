@@ -52,7 +52,7 @@ th, td {
 	priceTags.put("밀크쉐이크", 2500);
 	
 	//servlet에 전달하는 방법은...?
-	//session사용해보기 ----------아직 커밋 안함 밥먹고와서 다시 보기
+	//session사용해보기 ----------
 	session.setAttribute("priceTags", priceTags);
 	
 %>
@@ -113,7 +113,7 @@ th, td {
 	<br />
 	<br />
 
-	<form name="menuFrm" action="/web/menuOrder.do" method="post">
+	<form name="menuFrm" action="<%= request.getContextPath() %>/menuOrder.do" method="post">
 		<label for="mainMenu">메인메뉴 :</label> <select id="mainMenu"
 			name="mainMenu" required>
 			<option value="" disabled selected>햄버거를 선택하세요.</option>
